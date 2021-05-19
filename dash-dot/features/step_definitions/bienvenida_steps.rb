@@ -8,5 +8,5 @@ Then("deberia ver el mensaje {string}") do |message|
 end
 
 When("presiono el boton para dar inicio") do
-    click_link('Iniciar Juego')# Write code here that turns the phrase above into concrete actions
+    click_link('Iniciar Juego')
 end

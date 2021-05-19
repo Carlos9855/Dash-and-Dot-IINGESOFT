@@ -5,6 +5,6 @@ get '/' do
     erb :bienvenida
 end
 
-get '/inicio' do
-    erb :inicio
+get '/menu_principal' do
+    erb :menu_inicio
 end
