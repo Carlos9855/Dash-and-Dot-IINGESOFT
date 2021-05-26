@@ -22,6 +22,17 @@
             <h3>Posicion Final:<%=@posxfinal%>,<%=@posyfinal%> <%=@orientacionfinal%></h3> 
             <h3>Obstaculo:  <%=@orien%> <%=@opsx%>,<%=@opsy%></h3>
             <h3>Puente: <%=@puente%> <%=@puente_ini_x%>,<%=@puente_ini_y%>-<%=@puente_fin_x%>,<%=@puente_fin_y%> 
+            
+            <p>Terreno Creado :: <%= @largo_tablero %> x <%= @alto_tablero %></p>            
+                <table border="1">
+                    <% for row in 0..@alto_tablero-1 do  %>
+                        <tr>
+                            <%for col in 0..@largo_tablero-1 do %>
+                                <td> <%="___"%> </td>
+                            <% end %>
+                        </tr>
+                    <% end %>
+                </table>
         </div>
     </div>
 </body>
@@ -62,7 +73,7 @@
         border: 2px solid white;
         background: #33ded8;
         width: 520px;
-        height: 600px;
+        height: 800px;
         position: absolute;
         top: 10px;
         left: 10px;
