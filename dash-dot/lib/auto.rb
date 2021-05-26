@@ -13,6 +13,10 @@ class Auto
     def getPosicion_y()
         return @posicion_y
     end
+    def setPosicion(posicion_x,posicion_y)
+        @posicion_x=posicion_x
+        @posicion_y=posicion_y
+    end
     def girarDerecha()
         case @orientacion
             when 'N'
@@ -37,23 +41,39 @@ class Auto
                 @orientacion='S'
         end
     end
-    def avanzar(limite_largo,limite_alto)
+    def avanzar(limite_largo,limite_alto,ops_x,ops_y)
         case @orientacion
             when 'N'
                 if(@posicion_y+1<=limite_alto)
-                    @posicion_y=@posicion_y+1
+                    if (@posicion_y == ops_y-1)
+                        @posicion_y = @posicion_y
+                    else
+                        @posicion_y=@posicion_y+1
+                    end
                 end
             when 'S'
                 if(@posicion_y-1>0)
-                    @posicion_y=@posicion_y-1
+                    if (@posicion_y == ops_y+1)
+                        @posicion_y = @posicion_y
+                    else
+                        @posicion_y=@posicion_y-1
+                    end
                 end
             when 'O'
                 if(@posicion_x-1>0)
-                    @posicion_x=@posicion_x-1
+                    if (@posicion_x == ops_x+1)
+                        @posicion_x = @posicion_x
+                    else
+                        @posicion_x=@posicion_x-1
+                    end
                 end
             when 'E'
                 if(@posicion_x+1<=limite_largo)
-                    @posicion_x=@posicion_x+1
+                    if (@posicion_x == ops_x-1)
+                        @posicion_x = @posicion_x
+                    else
+                        @posicion_x=@posicion_x+1
+                    end
                 end
         end
     end

@@ -23,11 +23,11 @@ get '/inicio' do
     @opsx=@entrada.to_s.split(/\r\n/)[1].to_s.split("\s")[1].to_i
     @opsy=@entrada.to_s.split(/\r\n/)[1].to_s.split(/,/)[1].to_i
     #Definir Puente
-    @a=@entrada.to_s.split(/\r\n/)[2].to_s.split(/\s/)[0]
-    @s=@entrada.to_s.split(/\r\n/)[2].to_s.split("\s")[1].to_i
-    @d=@entrada.to_s.split(/\r\n/)[2].to_s.split(/,/)[1].to_i
-    @e=@entrada.to_s.split(/\r\n/)[2].to_s.split(/-/)[1].to_i
-    @f=@entrada.to_s.split(/\r\n/)[2].to_s.split(/;/)[1].to_i
+    @puente=@entrada.to_s.split(/\r\n/)[2].to_s.split(/\s/)[0]
+    @puente_ini_x=@entrada.to_s.split(/\r\n/)[2].to_s.split("\s")[1].to_i
+    @puente_ini_y=@entrada.to_s.split(/\r\n/)[2].to_s.split(/,/)[1].to_i
+    @puente_fin_x=@entrada.to_s.split(/\r\n/)[2].to_s.split(/-/)[1].to_i
+    @puente_fin_y=@entrada.to_s.split(/\r\n/)[2].to_s.split(/;/)[1].to_i
     #Posicion Inicial del auto
     @pos_x_auto=@entrada.to_s.split(/\r\n/)[3].to_s.split(/,/)[0].to_i
     @pos_y_auto=@entrada.to_s.split(/\r\n/)[3].to_s.split(/,/)[1].to_i
@@ -42,7 +42,7 @@ get '/inicio' do
     @comandos=@entrada.to_s.split(/\r\n/)[4].to_s.split(//)
     @comandos.each do |c|
         if(c=="A")
-            auto.avanzar(tablero.getLargo,tablero.getAlto)
+            auto.avanzar(tablero.getLargo,tablero.getAlto,@ops_x,@ops_y)
         end
         if(c=="I")
             auto.girarIzquierda
@@ -50,7 +50,9 @@ get '/inicio' do
         if(c=="D")
             auto.girarDerecha
         end
-
+    end
+    if (auto.getPosicion_x ==@puente_ini_x && auto.getPosicion_y ==  @puente_ini_y)
+        auto.setPosicion(@puente_fin_x,@puente_fin_y)
     end
     @posxfinal=auto.getPosicion_x
     @posyfinal=auto.getPosicion_y
