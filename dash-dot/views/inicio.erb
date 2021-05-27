@@ -28,7 +28,27 @@
                     <% for row in 0..@alto_tablero-1 do  %>
                         <tr>
                             <%for col in 0..@largo_tablero-1 do %>
-                                <td> <%="___"%> </td>
+                                <% if @pos_x_auto == col+1 && @pos_y_auto == row+1 %>
+                                    <td> <%="X"%> </td>
+                                <% else %>
+                                    <% if @posxfinal == col+1 && @posyfinal == row+1 %>
+                                        <td> <%="@"%> </td>
+                                    <% else %>
+                                        <% if @puente_ini_x == col+1 && @puente_ini_y == row+1 %>
+                                            <td> <%="PI"%> </td>
+                                        <% else %>
+                                            <% if @posxfinal == col+1 && @posyfinal == row+1 %>
+                                                <td> <%="PF"%> </td>
+                                            <% else %>
+                                                <% if @opsx == col+1 && @opsy == row+1 %>
+                                                    <td> <%="OBS"%> </td>
+                                                <% else %>
+                                                    <td> <%="___"%> </td>          
+                                                <% end %>
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
+                                <% end %>
                             <% end %>
                         </tr>
                     <% end %>
