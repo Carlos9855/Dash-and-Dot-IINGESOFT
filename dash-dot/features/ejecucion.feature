@@ -6,4 +6,4 @@ Feature:
 Scenario:
     Given visito la pgina de comandos
     When ingreso la posicion inicial del auto "2,2\n1,1 N\nDA"
-    Then testable outcome presiono el boton "ejecutar"
+    Then presiono el boton "ejecutar"
