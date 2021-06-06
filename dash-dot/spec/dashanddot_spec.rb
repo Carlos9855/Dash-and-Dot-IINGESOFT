@@ -50,4 +50,6 @@ RSpec.describe "dash dot" do
         auto.girarIzquierda()
         expect(auto.getOrientacion).to eq 'N' 
     end
+
+    
 end
