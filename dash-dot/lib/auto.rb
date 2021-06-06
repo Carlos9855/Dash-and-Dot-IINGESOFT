@@ -45,35 +45,19 @@ class Auto
         case @orientacion
             when 'N'
                 if(@posicion_y+1<=limite_alto)
-                    if (@posicion_y+1 == ops_y)
-                        @posicion_y = @posicion_y
-                    else
-                        @posicion_y=@posicion_y+1
-                    end
+                    @posicion_y=@posicion_y+1
                 end
             when 'S'
                 if(@posicion_y-1>0)
-                    if (@posicion_y-1 == ops_y)
-                        @posicion_y = @posicion_y
-                    else
-                        @posicion_y=@posicion_y-1
-                    end
+                    @posicion_y=@posicion_y-1
                 end
             when 'O'
                 if(@posicion_x-1>0)
-                    if (@posicion_x-1 == ops_x)
-                        @posicion_x = @posicion_x
-                    else
-                        @posicion_x=@posicion_x-1
-                    end
+                    @posicion_x=@posicion_x-1
                 end
             when 'E'
                 if(@posicion_x+1<=limite_largo)
-                    if (@posicion_x+1 == ops_x)
-                        @posicion_x = @posicion_x
-                    else
-                        @posicion_x=@posicion_x+1
-                    end
+                    @posicion_x=@posicion_x+1
                 end
         end
     end
