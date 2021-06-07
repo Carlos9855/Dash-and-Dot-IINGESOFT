@@ -22,7 +22,7 @@ RSpec.describe "dash dot" do
         tablero=Tablero.new(3,5)
         auto=Auto.new('S',1,2)
         tablero.addAuto(auto)
-        auto.avanzar(tablero.getLargo,tablero.getAlto,20,20)
+        auto.avanzar(tablero.getLargo,tablero.getAlto)
         expect(auto.getPosicion_y).to eq 1
     end
 
@@ -30,14 +30,14 @@ RSpec.describe "dash dot" do
         tablero=Tablero.new(3,5)
         auto=Auto.new('O',1,2)
         tablero.addAuto(auto)
-        auto.avanzar(tablero.getLargo,tablero.getAlto,20,20)
+        auto.avanzar(tablero.getLargo,tablero.getAlto)
         expect(auto.getPosicion_x).to eq 1
     end  
     it "deberia devolver posicion x sin moverse <3> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('E',3,2)
         tablero.addAuto(auto)
-        auto.avanzar(tablero.getLargo,tablero.getAlto,20,20)
+        auto.avanzar(tablero.getLargo,tablero.getAlto)
         expect(auto.getPosicion_x).to eq 3
     end
     it "deberia devolver E si le pasamos un auto orientaion S y el comando girarIzquierda()" do
@@ -90,5 +90,12 @@ RSpec.describe "dash dot" do
         auto=Auto.new('O',3,2)
         auto.girarDerecha()
         expect(auto.getOrientacion).to eq 'N' 
+    end
+    it "deberia devolver posicion x sin moverse <3> si le pasamos el comando avanzar "do
+        tablero=Tablero.new(3,5)
+        auto=Auto.new('N',3,2)
+        tablero.addAuto(auto)
+        auto.avanzar(tablero.getLargo,tablero.getAlto)
+        expect(auto.getPosicion_x).to eq 3
     end
 end

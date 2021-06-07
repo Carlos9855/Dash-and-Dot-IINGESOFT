@@ -41,7 +41,7 @@ class Auto
                 @orientacion='S'
         end
     end
-    def avanzar(limite_largo,limite_alto,ops_x,ops_y)
+    def avanzar(limite_largo,limite_alto)
         case @orientacion
             when 'N'
                 if(@posicion_y+1<=limite_alto)
