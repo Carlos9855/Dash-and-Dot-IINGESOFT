@@ -61,4 +61,9 @@ RSpec.describe "dash dot" do
         auto.girarIzquierda()
         expect(auto.getOrientacion).to eq 'O' 
     end
+    it "deberia devolver S si le pasamos un auto orientaion O y el comando girarIzquierda()" do
+        auto=Auto.new('O',8,7)
+        auto.girarIzquierda()
+        expect(auto.getOrientacion).to eq 'S' 
+    end
 end
