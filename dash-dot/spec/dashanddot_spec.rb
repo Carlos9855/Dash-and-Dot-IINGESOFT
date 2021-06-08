@@ -148,9 +148,51 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 1
     end 
+    #tablero
     it "deberia devolver true si le pasamos un auto fuera del tablero "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('S',3,5)
         expect(tablero.EstaEnPosicionesNulas(auto)).to eq true
     end
+
+    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+        tablero=Tablero.new(3,5)
+        auto=Auto.new('O',2,2)
+        auto1=Auto.new('O',2,1)
+        obstaculo=Obstaculo.new(2,3)
+        tablero.addAuto(auto1)
+        tablero.addObstaculo(obstaculo)
+        auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
+        expect(auto.getPosicion_x).to eq 2
+    end 
+    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+        tablero=Tablero.new(3,5)
+        auto=Auto.new('S',2,2)
+        auto1=Auto.new('S',3,2)
+        obstaculo=Obstaculo.new(2,3)
+        tablero.addAuto(auto1)
+        tablero.addObstaculo(obstaculo)
+        auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
+        expect(auto.getPosicion_x).to eq 2
+    end 
+    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+        tablero=Tablero.new(3,5)
+        auto=Auto.new('S',2,2)
+        auto1=Auto.new('S',3,2)
+        obstaculo=Obstaculo.new(2,3)
+        tablero.addAuto(auto1)
+        tablero.addObstaculo(obstaculo)
+        auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
+        expect(auto.getPosicion_x).to eq 2
+    end 
+    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+        tablero=Tablero.new(3,5)
+        auto=Auto.new('S',2,2)
+        auto1=Auto.new('S',1,2)
+        obstaculo=Obstaculo.new(3,2)
+        tablero.addAuto(auto1)
+        tablero.addObstaculo(obstaculo)
+        auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
+        expect(auto.getPosicion_x).to eq 2
+    end 
 end
