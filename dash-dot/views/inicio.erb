@@ -17,13 +17,15 @@
                 <h1> </h1>
                 <input type="submit" value="ejecutar">
             </form>
-            <h3>Posicion Inicial:<%=@pos_x_auto1%>,<%=@pos_y_auto1%> <%=@orientacion_auto1%></h3>
-            <h3>Comandos <%=@comandos1%></h3>
-            <h3>Posicion Final:<%=@posxfinal%>,<%=@posyfinal%> <%=@orientacionfinal%></h3> 
-            <h3>Obstaculo:  <%=@orien%> <%=@opsx%>,<%=@opsy%></h3>
-            <h3>Puente: <%=@puente%> <%=@puente_ini_x%>,<%=@puente_ini_y%>-<%=@puente_fin_x%>,<%=@puente_fin_y%> 
-            
-            <p>Terreno Creado :: <%= @largo_tablero %> x <%= @alto_tablero %></p>            
+            <%i=0%>
+            <% while i<@posyiniciales.length() do%>
+                <h3>Posicion Inicial:<%=@pos_x_auto1%>,<%=@pos_y_auto1%> <%=@orientacion_auto1%></h3>
+                <h3>Comandos <%=@comandos1%></h3>
+                <h3>Posicion Final:<%=@posxfinal%>,<%=@posyfinal%> <%=@orientacionfinal%></h3> 
+                <h3>Obstaculo:  <%=@orien%> <%=@opsx%>,<%=@opsy%></h3>
+                <h3>Puente: <%=@puente%> <%=@puente_ini_x%>,<%=@puente_ini_y%>-<%=@puente_fin_x%>,<%=@puente_fin_y%> 
+            <%end%>
+            <!--<p>Terreno Creado :: <%= @largo_tablero %> x <%= @alto_tablero %></p>            
                 <table border="1">
                     <% for row in 0..@alto_tablero-1 do  %>
                         <tr>
@@ -52,7 +54,7 @@
                             <% end %>
                         </tr>
                     <% end %>
-                </table>
+                </table>-->
         </div>
     </div>
 </body>

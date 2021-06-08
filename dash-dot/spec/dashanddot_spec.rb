@@ -98,4 +98,9 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto)
         expect(auto.getPosicion_x).to eq 3
     end
+    it "deberia devolver false si le pasamos un auto fuera del tablero "do
+        tablero=Tablero.new(3,5)
+        auto=Auto.new('S',5,5)
+        expect(tablero.addAuto(auto)).to eq false
+    end
 end
