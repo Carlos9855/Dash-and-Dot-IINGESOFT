@@ -1,6 +1,5 @@
 class Obstaculo
-    def initialize(posicionObs_y,posicionObs_x)  
-        # atributos           
+    def initialize(posicionObs_y,posicionObs_x)             
         @posicionObs_x=posicionObs_x
         @posicionObs_y=posicionObs_y
     end

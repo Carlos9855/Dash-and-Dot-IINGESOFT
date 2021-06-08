@@ -121,6 +121,13 @@ RSpec.describe "dash dot" do
         auto.girarIzquierda()
         expect(auto.getOrientacion).to eq 'N' 
     end
+    #tablero
+    it "deberia devolver true si le pasamos un auto fuera del tablero "do
+        tablero=Tablero.new(3,5)
+        auto=Auto.new('S',3,5)
+        expect(tablero.EstaEnPosicionesNulas(auto)).to eq true
+    end
+
     it "deberia añadir comandos a los autos" do
         auto=Auto.new('E',2,3)
         auto.addComando("IADAI")
@@ -148,14 +155,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 1
     end 
-    #tablero
-    it "deberia devolver true si le pasamos un auto fuera del tablero "do
-        tablero=Tablero.new(3,5)
-        auto=Auto.new('S',3,5)
-        expect(tablero.EstaEnPosicionesNulas(auto)).to eq true
-    end
-
-    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion x-1 <2> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('O',2,2)
         auto1=Auto.new('O',2,1)
@@ -165,7 +165,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 2
     end 
-    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion y-1 <2> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('S',2,2)
         auto1=Auto.new('S',3,2)
@@ -175,7 +175,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 2
     end 
-    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion y-1 <2> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('S',2,2)
         auto1=Auto.new('S',3,2)
@@ -185,7 +185,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 2
     end 
-    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion y-1 <2> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('S',2,2)
         auto1=Auto.new('S',1,2)
@@ -195,7 +195,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 2
     end 
-    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion y+1 <2> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('N',2,2)
         auto1=Auto.new('N',1,2)
@@ -205,7 +205,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 2
     end 
-    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion y+1 <2> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('N',2,2)
         auto1=Auto.new('N',3,2)
@@ -215,7 +215,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 2
     end 
-    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion x+1 <2> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('O',2,2)
         auto1=Auto.new('O',2,4)
@@ -225,7 +225,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 2
     end 
-    it "deberia devolver posicion x-1 <3> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion y-1 <3> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('E',2,3)
         auto1=Auto.new('E',1,4)
