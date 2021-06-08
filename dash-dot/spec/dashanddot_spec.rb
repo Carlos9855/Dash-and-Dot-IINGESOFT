@@ -225,7 +225,7 @@ RSpec.describe "dash dot" do
         auto.avanzar(tablero.getLargo,tablero.getAlto,tablero.getAutos,tablero.getObstaculos)
         expect(auto.getPosicion_x).to eq 2
     end 
-    it "deberia devolver posicion x-1 <1> si le pasamos el comando avanzar "do
+    it "deberia devolver posicion x-1 <3> si le pasamos el comando avanzar "do
         tablero=Tablero.new(3,5)
         auto=Auto.new('E',2,3)
         auto1=Auto.new('E',1,4)
