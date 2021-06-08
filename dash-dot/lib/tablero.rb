@@ -7,7 +7,7 @@ class Tablero
         @alto = alto 
         @largo=largo
         @autos=Array.new
-        @obstaculos=Array.new
+        @obstaculos = Array.new
     end
 
     def getAlto()
@@ -35,9 +35,8 @@ class Tablero
             return true
         end
     end
-
-    def getObstaculos()
-        return @obstaculos
+    def getAutos()
+        return @autos
     end
 
     def addObstaculo(obstaculo)
@@ -45,7 +44,4 @@ class Tablero
         return true
     end
 
-    def getAutos()
-        return @autos
-    end
 end

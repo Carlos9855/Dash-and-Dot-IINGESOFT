@@ -1,4 +1,4 @@
-require './lib/obstaculo.rb'
+
 class Auto   
     # método inicializar clase
     def initialize(orientacion, posicion_y,posicion_x)  
@@ -47,7 +47,7 @@ class Auto
                 @orientacion='S'
         end
     end
-    def avanzar(limite_largo,limite_alto,listaAutos,listaObstaculos)
+    def avanzar(limite_largo,limite_alto,listaAutos)
 
         case @orientacion
             when 'S'
@@ -58,12 +58,6 @@ class Auto
                         break
                     end
                 end
-                listaObstaculos.each do |o|
-                 if(@posicion_x ==o.getPosicionObs_x && @posicion_y+1 == o.getPosicionObs_y) 
-                       libre=false
-                       break
-                  end
-                end
                 if(@posicion_y+1<limite_alto && libre)
                     @posicion_y=@posicion_y+1
                 end
@@ -71,12 +65,6 @@ class Auto
                 libre=true
                 listaAutos.each do |a|
                     if(@posicion_x ==a.getPosicion_x &&  @posicion_y-1 == a.getPosicion_y) 
-                        libre=false
-                        break
-                    end
-                end
-                listaObstaculos.each do |o|
-                  if(@posicion_x ==o.getPosicionObs_x &&  @posicion_y-1 == o.getPosicionObs_y) 
                         libre=false
                         break
                     end
@@ -93,12 +81,6 @@ class Auto
                         break
                     end
                 end
-                listaObstaculos.each do |o|
-                    if(@posicion_x-1 ==o.getPosicionObs_x && @posicion_y == o.getPosicionObs_y) 
-                        libre=false
-                        break
-                    end
-                end
                 if(@posicion_x-1>=0 && libre)
                     @posicion_x=@posicion_x-1
                 end
@@ -106,12 +88,6 @@ class Auto
                 libre=true
                 listaAutos.each do |a|
                     if(@posicion_x+1 ==a.getPosicion_x && @posicion_y == a.getPosicion_y) 
-                        libre=false
-                        break
-                    end
-                end
-                listaObstaculos.each do |o|
-                    if(@posicion_x+1 ==o.getPosicionObs_x && @posicion_y == o.getPosicionObs_y) 
                         libre=false
                         break
                     end
